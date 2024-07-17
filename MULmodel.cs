@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.IO;
 using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Trainers.FastTree;
+using Microsoft.ML.Trainers.LightGbm;
 
 namespace AICalculator
 {
@@ -73,15 +74,19 @@ namespace AICalculator
             var pipeline = mlContext.Transforms.ReplaceMissingValues(new[] { new InputOutputColumnPair("Value1", "Value1"), new InputOutputColumnPair("Value2", "Value2") })
                                     .Append(mlContext.Transforms.Concatenate("Features", new[] { "Value1", "Value2" }))
                                     
-                                    .Append(mlContext.Transforms.NormalizeMinMax("Result", "Result"))
-                                    .Append(mlContext.Regression.Trainers.FastForest(new FastForestRegressionTrainer.Options()
-                                    {
-                                        NumberOfTrees = 6,
-                                        NumberOfLeaves = 4,
-                                        FeatureFraction = 0.93176F,
-                                        LabelColumnName = "Result",
-                                        FeatureColumnName = "Features"
-                                    }));
+                                    .Append(mlContext.Regression.Trainers.LightGbm(new LightGbmRegressionTrainer.Options() { 
+                                        NumberOfLeaves = 4, 
+                                        NumberOfIterations = 2939, 
+                                        MinimumExampleCountPerLeaf = 25, 
+                                        LearningRate = 0.276184022166429, 
+                                        LabelColumnName = @"Result", 
+                                        FeatureColumnName = @"Features", 
+                                        Booster = new GradientBooster.Options() { 
+                                            SubsampleFraction = 0.210371301676667, 
+                                            FeatureFraction = 0.99999999, 
+                                            L1Regularization = 3.01441983153568E-10, 
+                                            L2Regularization = 0.999999776672986 }, 
+                                        MaximumBinCountPerFeature = 233 }));
 
             return pipeline;
         }
