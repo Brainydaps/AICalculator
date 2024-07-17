@@ -12,6 +12,15 @@ So I decided to develop the AI version of my calculator app(check my repos), we 
 - Support for basic arithmetic operations and scientific functions(these ones use the normal math libraries provided by C#, i would see if i can create machine learning models for them also in future updates) such as trigonometric calculations, square, and square root.
 - User-friendly interface designed using Microsoft MAUI for cross-platform compatibility.
 
+  ## What's New in v1.2 of AI Calculator
+
+- **Updated Training Data**: Enhanced the training datasets for multiplication (MUL) and division (DIV) models with more relevant and comprehensive data to improve pattern recognition.
+- **Algorithm Improvements**: Updated the algorithms for MUL and DIV models with optimizations and tunings made using AutoML from ML.NET.
+- **Increased Accuracy**: Multiplication and division calculations are now more accurate than in previous versions, providing users with more reliable results.
+
+These improvements ensure that the AI Calculator continues to deliver high-quality performance and better accuracy for your arithmetic operations.
+
+
 ![Screenshot 2024-07-17 145819](https://github.com/user-attachments/assets/9da55a29-1c28-45bb-983d-083029f1b595)
 
 ## License
