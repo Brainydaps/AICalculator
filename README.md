@@ -3,7 +3,7 @@
 
 ## Overview
 
-So I decided to develop the AI version of my calculator app(check my repos), we would call it AI Calculator. It utilizes a combination of different machine learning models to perform basic arithmetic operations such as addition, subtraction, multiplication, and division. The application integrates different machine learning algorithms with different tunings to enhance calculation accuracy and efficiency. It is my way of demonstrating that a relatively accurate calculator can be made without being hard coded into the app using math libraries. This just demonstrates the power of AI.
+So I decided to develop the AI version of my calculator app(check my repos), we would call it AI Calculator. It utilizes a combination of different machine learning models(Mixture of Experts technique) to perform basic arithmetic operations such as addition, subtraction, multiplication, and division. The application integrates different machine learning algorithms with different tunings to enhance calculation accuracy and efficiency. It is my way of demonstrating that a relatively accurate calculator can be made without being hard coded into the app using math libraries. This just demonstrates the power of AI.
 
 ## Features
 
