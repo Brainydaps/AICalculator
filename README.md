@@ -23,6 +23,8 @@ These improvements ensure that the AI Calculator continues to deliver high-quali
 
 ![Screenshot 2024-07-17 145819](https://github.com/user-attachments/assets/9da55a29-1c28-45bb-983d-083029f1b595)
 
+[YouTube Demonstration](https://youtu.be/65KieyJofJE)
+
 ## License
 
 This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License. See the [LICENSE](LICENSE) file for details.
