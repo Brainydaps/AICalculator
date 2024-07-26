@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using Microsoft.ML;
 using Microsoft.ML.Data;
@@ -71,11 +71,11 @@ namespace AICalculator
 
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
+
             var pipeline = mlContext.Transforms.ReplaceMissingValues(new[] { new InputOutputColumnPair(@"Value1", @"Value1"), new InputOutputColumnPair(@"Value2", @"Value2") })
                                     .Append(mlContext.Transforms.Concatenate(@"Features", new[] { @"Value1", @"Value2" }))
                                     .Append(mlContext.Regression.Trainers.FastTree(new FastTreeRegressionTrainer.Options() { NumberOfLeaves = 722, MinimumExampleCountPerLeaf = 2, NumberOfTrees = 58, MaximumBinCountPerFeature = 319, FeatureFraction = 0.99999999, LearningRate = 0.151346529025211, LabelColumnName = @"Result", FeatureColumnName = @"Features", DiskTranspose = false }));
-
-
+          
             return pipeline;
         }
     }
