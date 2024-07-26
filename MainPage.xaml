@@ -30,7 +30,7 @@
 
     <StackLayout>
         <!-- New Label for displaying the information -->
-        <Label Text="+,-,x, and / operations are all calculated by different machine learning models in the background."
+        <Label Text="All operations are all calculated by different machine learning models in the background, use results with caution."
                FontSize="12"
                HorizontalOptions="Center"
                VerticalOptions="Start"
