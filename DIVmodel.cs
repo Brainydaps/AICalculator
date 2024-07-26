@@ -71,24 +71,11 @@ namespace AICalculator
 
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
-            var pipeline = mlContext.Transforms.ReplaceMissingValues(new[] { new InputOutputColumnPair("Value1", "Value1"), new InputOutputColumnPair("Value2", "Value2") })
-                                    .Append(mlContext.Transforms.Concatenate("Features", new[] { "Value1", "Value2" }))
-                     
-                                    .Append(mlContext.Regression.Trainers.LightGbm(new LightGbmRegressionTrainer.Options() { 
-                                        NumberOfLeaves = 4, 
-                                        NumberOfIterations = 2981, 
-                                        MinimumExampleCountPerLeaf = 20, 
-                                        LearningRate = 0.999999776672986, 
-                                        LabelColumnName = @"Result", 
-                                        FeatureColumnName = @"Features", 
-                                        Booster = new GradientBooster.Options() { 
-                                            SubsampleFraction = 0.977159784466191, 
-                                            FeatureFraction = 0.955921410836799, 
-                                            L1Regularization = 1.08597194480575E-09, 
-                                            L2Regularization = 0.180834720077925 }, 
-                                        MaximumBinCountPerFeature = 196 }));
 
-
+            var pipeline = mlContext.Transforms.ReplaceMissingValues(new[] { new InputOutputColumnPair(@"Value1", @"Value1"), new InputOutputColumnPair(@"Value2", @"Value2") })
+                                    .Append(mlContext.Transforms.Concatenate(@"Features", new[] { @"Value1", @"Value2" }))
+                                    .Append(mlContext.Regression.Trainers.FastTree(new FastTreeRegressionTrainer.Options() { NumberOfLeaves = 722, MinimumExampleCountPerLeaf = 2, NumberOfTrees = 58, MaximumBinCountPerFeature = 319, FeatureFraction = 0.99999999, LearningRate = 0.151346529025211, LabelColumnName = @"Result", FeatureColumnName = @"Features", DiskTranspose = false }));
+          
             return pipeline;
         }
     }
