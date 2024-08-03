@@ -25,6 +25,7 @@ AI Calculator is now a pure Artificial Intelligence calculator. All mathematical
 
 ![Screenshot 2024-07-17 145819](https://github.com/user-attachments/assets/9da55a29-1c28-45bb-983d-083029f1b595)
 
+![Screenshot 2024-08-03 at 12 54 27](https://github.com/user-attachments/assets/c39f9428-0988-4443-9542-ba4147ac4ce3)
 [YouTube Demonstration](https://youtu.be/65KieyJofJE)
 
 ## License
